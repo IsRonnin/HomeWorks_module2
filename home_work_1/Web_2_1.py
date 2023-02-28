@@ -35,4 +35,5 @@ print(*[                        # их вывод через краткий for 
     (product.id, product.name, product.category, product.price, product.animal, product.weight) # обращение к полю name 
     for product in products     # обьявляем product вытягивая его из списка products
     if len(product.name) > 2    # проверяем если количество буков в product.name > 2 если да выполняем строку которая выше.
-], sep='\n')                    # делим вывод на разные строки в консоли
+], sep='\n')                    # делим вывод на разные строки в консоли 
+# если у кого вопросы обращятся ко мне в дс канал https://discord.gg/vMS9jrUf
