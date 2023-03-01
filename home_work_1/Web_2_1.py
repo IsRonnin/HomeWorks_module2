@@ -1,14 +1,14 @@
 from pynput import keyboard
 
-# Зоомагазин поле 1 - цена товара 2 - для какого животного 3 - вес
+# Зоомагазин поле 1 - цена товара 2 - для какого животного 3 - вес (Меняете на своё если очень надо)
 class Product:
     __MAX_ID = 0 # Приватная (Инкапсулированная) переменная-атрибут класса для счёта id
     def __init__(self, name, category, price, animal, weight) -> None: # Господа! те кто берут код с моего гитхаба! обратите внимание что 
                                                                        # у вас тема может отличатся от моей и код нужно чутка переделать! 
                                                                        # что нужно изменить думаю знаете (по таблице из доков с дз прикреплена
                                                                        # к гиту)
-        self.name = name # обьявляем атрибут класса self.name присваивая ему значение переданного аргумента name
-        self.category: str = category # аналогично тому что выше 
+        self.name = name                # обьявляем атрибут класса self.name присваивая ему значение переданного аргумента name
+        self.category: str = category   # аналогично тому что выше 
         self.id: int = Product.__MAX_ID # Присваиваем аттрибуту self.id значение класса product.__MAX_ID (Описанно выше)
         # новые аттрибуты
         self.price = price
@@ -16,7 +16,7 @@ class Product:
         self.weight = weight
 
         Product.__MAX_ID += 1 # увеличиваем глобальный классовы атрибут на 1 (что бы следующий id был больше на 1 и не повторялся)
-
+# Словарь продуктов
 my_dict = {"Royal Canin": {"category": "Сухой корм", "price": "600 ₽", "animal": "Коты", "weight": '1000 г'}, 
            "SAVITA консервы консервы": {"category": "Консервы", "price": "152 ₽", "animal": "Коты", "weight": '100 г'}, 
            "Organix мясное суфле с ягнёнком": {"category": "Ламистер", "price": "61 ₽", "animal": "Котята ", "weight": '125 г'},
@@ -34,6 +34,6 @@ for product in my_dict.keys():
 print(*[                        # их вывод через краткий for (о нём подробнее можно узанать у меня или в закреалённой статье)
     (product.id, product.name, product.category, product.price, product.animal, product.weight) # обращение к полю name 
     for product in products     # обьявляем product вытягивая его из списка products
-    if len(product.name) > 2    # проверяем если количество буков в product.name > 2 если да выполняем строку которая выше.
+    if len(product.name) > 5    # проверяем если количество буков в product.name > 5 если да выполняем строку которая выше.
 ], sep='\n')                    # делим вывод на разные строки в консоли 
 # если у кого вопросы обращятся ко мне в дс канал https://discord.gg/vMS9jrUf
