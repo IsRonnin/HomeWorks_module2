@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\artem\Desktop\Py_tst\2\again\env"
+VIRTUAL_ENV="C:\Users\artem\Desktop\Home_worksM2\2\again\home_work_1\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
