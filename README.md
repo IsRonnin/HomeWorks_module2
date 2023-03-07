@@ -23,3 +23,11 @@ py -m venv <имя среды>
 * После чего пишем и тоже нажимаем Enter: A (Да для всех)
 
 Удачи!
+
+Сылка на статью по джанго
+
+https://github.com/IsRonnin/HomeWorks_module2/blob/master/home_work_2/HOWTODJANGO.md 
+
+Ссылка на описание выполнения мной 2 дз
+
+https://github.com/IsRonnin/HomeWorks_module2/blob/master/home_work_3/info.md
