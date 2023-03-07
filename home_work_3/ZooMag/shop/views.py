@@ -17,7 +17,9 @@ def hello(request: HttpRequest):
 
 def start_page(request: HttpRequest):
     return HttpResponse('<a href="hello/">Дз_1</a><br><a href="products/">Список товаров</a> <br><br>' + 
-                        '<br>'.join(f'<a href="products/product/{indx}">Продукт: {indx}</a><br>'.format(products_list[indx]) if products_list[indx] != None else f'<a href="products/product/{indx}">Продукт: None</a><br>'.format(products_list[indx]) for indx in range(len(products_list))))
+                        '<br>'.join(f'<a href="products/product/{indx}">Продукт: {indx}</a><br>'.format(products_list[indx]) if products_list[indx] != None 
+                                    else f'<a href="products/product/{indx}">Продукт: None</a><br>'.format(products_list[indx]) 
+                                    for indx in range(len(products_list))))
 
 
 @csrf_exempt
