@@ -26,7 +26,7 @@ def start_page(request: HttpRequest):
 def products(request:HttpRequest):
     if request.method == 'GET':
         print('<br>'.join(str(product) for product in products_list))
-        return HttpResponse('<br>'.join(str(product) for product in products_list))
+        return HttpResponse('<br>'.join(str(product) for product in products_list), status=200)
     
     if request.method == 'POST':
         body = request.body.decode('UTF-8').split('\n')
