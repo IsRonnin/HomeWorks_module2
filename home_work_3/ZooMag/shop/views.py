@@ -58,5 +58,5 @@ def product(request: HttpResponse, id:int):
         except Exception:
             return Http404()
         
-        if answer != None: return HttpResponse(str(answer))
+        if answer != None: return HttpResponse(str(answer), status=200)
         return HttpResponseRedirect(reverse('products'))
