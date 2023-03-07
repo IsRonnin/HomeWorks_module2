@@ -28,6 +28,6 @@ py -m venv <имя среды>
 
 https://github.com/IsRonnin/HomeWorks_module2/blob/master/home_work_2/HOWTODJANGO.md 
 
-Ссылка на описание выполнения мной 2 дз
+Ссылка на описание выполнения мной 3 дз
 
 https://github.com/IsRonnin/HomeWorks_module2/blob/master/home_work_3/info.md
