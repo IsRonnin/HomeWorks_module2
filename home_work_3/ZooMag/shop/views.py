@@ -13,13 +13,13 @@ products_list.append(None)
 def hello(request: HttpRequest):
     obj = Product("Royal Canin", "Сухой корм", "600 ₽", "Коты", '1000 г') # Условный обьект.
     my_info = f'Я {"Артём Ващенко"} мне {"15"} и я люблю кодить! Вот вам случайное число! <{random.randint(-1000, 1000)}> <br>' + str(obj)
-    return HttpResponse(my_info)
+    return HttpResponse(my_info, status=200)
 
 def start_page(request: HttpRequest):
     return HttpResponse('<a href="hello/">Дз_1</a><br><a href="products/">Список товаров</a> <br><br>' + 
                         '<br>'.join(f'<a href="products/product/{indx}">Продукт: {indx}</a><br>'.format(products_list[indx]) if products_list[indx] != None 
                                     else f'<a href="products/product/{indx}">Продукт: None</a><br>'.format(products_list[indx]) 
-                                    for indx in range(len(products_list))))
+                                    for indx in range(len(products_list))), status=200)
 
 
 @csrf_exempt
