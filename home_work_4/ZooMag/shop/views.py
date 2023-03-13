@@ -2,12 +2,19 @@ from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse, Http404, HttpResponseRedirect, StreamingHttpResponse, FileResponse, JsonResponse
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
+from pathlib import Path
+import os
+
+APP_DIR = Path(__file__).resolve().parent
+our_static = os.path.join(APP_DIR, 'static')
+
+
 from .myClass import *
 import random
 
-category_img = {"сухой_корм": 'C:/Users/artem/Desktop/Home_worksM2/2/again/web_work/ZooMag/shop/static/images/dry_food.jpg',
-                    "корм":'C:/Users/artem/Desktop/Home_worksM2/2/again/web_work/ZooMag/shop/static/images/food.jpg',
-                    "паучи": 'C:/Users/artem/Desktop/Home_worksM2/2/again/web_work/ZooMag/shop/static/images/pauchi.jpeg'}
+category_img = {"сухой_корм": os.path.join(our_static, 'images', 'dry_food.jpg'),
+                    "корм":os.path.join(our_static, 'images', 'food.jpg'),
+                    "паучи": os.path.join(our_static, 'images', 'pauchi.jpeg')}
 
 products_list = filled()
 products_list.append(None)
@@ -80,10 +87,11 @@ def product(request: HttpResponse, id:int):
         return HttpResponseRedirect(reverse('products'))
 
 def image_view(request: HttpRequest):
-    respounse = FileResponse(open('C:/Users/artem/Desktop/Home_worksM2/2/again/web_work/ZooMag/shop/static/images/1.png', 'rb'))
+    respounse = FileResponse(open(os.path.join(our_static, 'images', '1.png'), 'rb'))
     return respounse
 
 def get_img_category(request: HttpRequest, category: str):
+    print(category_img[category.lower()])
     if  category.lower() in category_img:   
         respounse = FileResponse(open(category_img[category.lower()], 'rb'))
     else:
