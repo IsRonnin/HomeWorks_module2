@@ -1,0 +1,22 @@
+{% extends 'base_layout.html' %}
+
+{% block page_content %}
+    <article>
+        <h3>{{product.name}}</h3>
+        {% if product.category is not None %}
+        <img src="{{product.category.image.url}}" height="200 px">
+        <p>Категория {{ product.category }}</p>
+        {% endif %}
+        <p>дата выпуска {{product.release_date}}</p>
+        <p>Вес: {{ product.weight }}</p>
+        <p>Сделано для: {{ product.animal }}</p>
+        <p> 
+            {% if product.price == "0" %}
+                Бесплатно
+            {% else %}
+                {{ product.price }}
+            {% endif %}
+        </p>
+        <a href='#'>Купить!</a>
+    </article>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base_layout.html' %}
+
+{% block page_content %}
+    {% for product in products %}
+
+    <article>
+        <h3>{{product.name}}</h3>
+        {% if product.category is not None %}
+        <img src="{{product.category.image.url}}" height="200 px">
+        <p>Категория {{ product.category }}</p>
+        {% endif %}
+        
+        <p>Вес: {{ product.weight }}</p>
+        <p> 
+            {% if product.price == "0" %}
+                Бесплатно
+            {% else %}
+                {{ product.price }}
+            {% endif %}
+        </p>
+        <a href='{% url "product" id=product.pk%}'>Тык!</a>
+    </article>
+
+    {% endfor %}
+{% endblock %}
