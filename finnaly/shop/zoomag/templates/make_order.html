@@ -1,0 +1,12 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+{% block page_content %}
+    <form action="{% url 'make_order' id=product.id %}" method="post">
+        {% for input in form %}
+        <label for="{{input.id_for_label}}">{{ input.label }}</label>
+        <p>{{ input }}</p>
+        {{ input.errors}}
+        {% endfor %}
+        <button type="submit">Заказать</button>
+    </form>
+{% endblock %}

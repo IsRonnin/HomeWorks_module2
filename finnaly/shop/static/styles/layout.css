@@ -1,0 +1,49 @@
+body{
+    padding: 10px;
+    background-color: rgb(112, 191, 226);
+}
+
+* {
+    padding: 10px;
+    margin: 0;
+    
+}
+
+.header{
+    padding: 10px 0;
+    text-align: center;
+    background-color: aqua;
+}
+
+.navmenu{
+    display: inline;
+}
+
+html, body{
+    font-size: 30px;
+    font-family: "sans-serif";
+}
+
+.logo{
+    font-weight: bold;
+    padding-right: 50ch;
+}
+
+.navlink{
+    text-decoration: none;
+    color: black;
+}
+
+.navlink:hover{
+    text-decoration: none;
+    color:blue;
+
+}
+
+.content{
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+    min-height: 80vh;
+    padding: 20px 0;
+}

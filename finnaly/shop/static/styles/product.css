@@ -1,0 +1,22 @@
+.product{
+    border: solid 1px #000000;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #2566b5;
+}
+.product-link{
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    margin-top: 30px;
+    background-color:blueviolet ;
+    border-radius: 10px;
+}
+
+.product-link :hover{
+    background-color:rgb(133, 33, 227);
+}
+
+.product + .product{
+    margin-top: 50px;
+}
