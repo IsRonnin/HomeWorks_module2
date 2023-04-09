@@ -22,9 +22,9 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
     - name: Run Tests
       run: |
+        cd finnaly
+        env\scripts\activate
+        cd shop
         python manage.py test
